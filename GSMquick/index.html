@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="js/scripts.js" defer></script>
+    <title>GSM-quick</title>
+</head>
+<body>
+    <div id="all">
+        <div id="home">
+            <h1>GSM-quick</h1>
+        </div>
+
+
+        <div id="main">
+            <p>Entrez le numero du canal :</p>
+            <form>
+                
+                <br>
+                <input type="number" max="1024" min="0" placeholder="1-124 / 975-1024 / 512-885" id="answer">
+            </form><br>
+        </div>
+
+        <div id="resultat">
+            <div id="result">
+                <span id="no">Numéro du canal : <span id="i_no"></span></span><br>
+                <span id="up">Voie montante (uplink) : <span id="i_up"></span> MHz</span><br>
+                <span id="down">Voie descendante (downlink) : <span id="i_down"></span> MHz</span><br>
+                <span id="mod">Modulation : <span id="i_mod"></span></span><br>
+            </div>
+        </div>
+    </div>
+
+
+</body>
+</html>

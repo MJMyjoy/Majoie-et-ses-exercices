@@ -44,7 +44,7 @@ setInterval(() => {
             i_up.innerHTML = 1805.2 + (0.2 * (answer.value-512));
             i_down.innerHTML = (1805.2 - 95) + (0.2 * (answer.value-512));
 
-            i_mod.innerHTML = "DCS (GCS 1800)";
+            i_mod.innerHTML = "DCS (GSM 1800)";
         }
 
 

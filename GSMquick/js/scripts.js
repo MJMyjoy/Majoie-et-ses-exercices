@@ -29,7 +29,7 @@ setInterval(() => {
         {
             i_up.innerHTML = 935 + (0.2 * answer.value);
             i_down.innerHTML = (935-45) + (0.2 * answer.value);
-            i_mod.innerHTML = "GCM 900";
+            i_mod.innerHTML = "GSM 900";
         }
 
         if  (answer.value >=975 && answer.value <=1024)

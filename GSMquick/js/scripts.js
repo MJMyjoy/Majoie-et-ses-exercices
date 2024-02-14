@@ -28,21 +28,32 @@ setInterval(() => {
         if (answer.value >=1 && answer.value <=124)
         {
             i_up.innerHTML = 935 + (0.2 * answer.value);
+            i_up.innerHTML = (Math.floor(i_up.innerHTML*10)/10);
+
             i_down.innerHTML = (935-45) + (0.2 * answer.value);
+            i_down.innerHTML = (Math.floor(i_down.innerHTML*10)/10);
+
             i_mod.innerHTML = "GSM 900";
         }
 
         if  (answer.value >=975 && answer.value <=1024)
         {
             i_up.innerHTML = 935 + (0.2 * (answer.value-1024));
+            i_up.innerHTML = (Math.floor(i_up.innerHTML*10)/10);
+
             i_down.innerHTML = (935 - 45) + (0.2 * (answer.value-1024));
+            i_down.innerHTML = (Math.floor(i_down.innerHTML*10)/10);
+
             i_mod.innerHTML = "eGSM (GSM étendu)";
         }
 
         if (answer.value >=512 && answer.value <=885) 
         {
             i_up.innerHTML = 1805.2 + (0.2 * (answer.value-512));
+            i_up.innerHTML = (Math.floor(i_up.innerHTML*10)/10);
+
             i_down.innerHTML = (1805.2 - 95) + (0.2 * (answer.value-512));
+            i_down.innerHTML = (Math.floor(i_down.innerHTML*10)/10);
 
             i_mod.innerHTML = "DCS (GSM 1800)";
         }

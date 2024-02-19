@@ -92,9 +92,27 @@ li
     padding: 0.3em;
     cursor: pointer;
     box-shadow: 4px 4px 4px 0 rgba(0, 0, 0, 0.5);
+    position: relative;
     outline: none;
 }
 
+.terme
+{
+    position: relative;
+    background-color: black;
+    color: white;
+    transition: transform 0.2s ease-in-out;
+    transform: scale(1) rotate(0deg);
+}
+.sens
+{
+    position: absolute;
+}
+
+li:hover .terme
+{
+    transform: scale(0) rotate(-360deg);
+}
 
 footer
 {

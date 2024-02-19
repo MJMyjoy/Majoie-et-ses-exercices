@@ -11,7 +11,7 @@ body
     margin: 0em;
     padding: 0em;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-    width: 100%;
+    max-width: 100%;
 }
 
 ul
@@ -63,8 +63,6 @@ ul
 header
 {
     font-size: 2em;
-    margin: 0em;
-    padding-top: 0.1em;
     animation: couleurs 5s both infinite ease-in-out alternate-reverse;
 }
 
@@ -80,18 +78,23 @@ header
     animation: balances 1s both infinite ease-in-out alternate-reverse;
 }
 
+ul
+{
+    margin-left: auto;
+    margin-right: auto;
+}
 
 li
 {
     font-weight: bold;
     display: block;
-    border: 0.1em solid black;
+    border: 0.1em outset black;
     border-radius: 0.5em;
     width: 12em;
     margin: 0.5em auto;
     padding: 0.3em;
     cursor: pointer;
-    box-shadow: 4px 4px 4px 0 rgba(0, 0, 0, 0.5);
+    box-shadow: 0.2em 0.2em 0.2em 0 rgba(0, 0, 0, 0.5);
     position: relative;
     outline: none;
 }
@@ -101,8 +104,9 @@ li
     position: relative;
     background-color: black;
     color: white;
-    transition: transform 0.2s ease-in-out;
-    transform: scale(1) rotate(0deg);
+    padding: 0.6em;
+    transition: transform 0.4s ease-in-out;
+    transform: scale(1) translate(0%) rotate(0deg);
 }
 .sens
 {
@@ -111,7 +115,7 @@ li
 
 li:hover .terme
 {
-    transform: scale(0) rotate(-360deg);
+    transform: scale(0) translate(100%) rotate(-360deg);
 }
 
 footer

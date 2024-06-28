@@ -1,0 +1,32 @@
+<!DOCTYPE html> <html lang="fr">
+<head>
+<meta charset="UTF-8">
+<title>Exemple de notification</title>
+</head>
+<body>
+<button id="notifier-btn">Notifier</button>
+<script>
+document.getElementById("notifier-btn").onclick = notifier;
+/* Quand le document sera chargé */
+document.addEventListener('DOMContentLoaded',
+function () {
+/* Vérifie si le navigateur est compatible avec les notifications */
+if (!Notification)
+{ alert('Le navigateur ne supporte pas les notifications.'); }
+/* Si le navigateur prend en charge les notifications, * on demande la permission si les notifications ne sont pas permises */
+else if (Notification.permission !== 'granted')
+
+Notification.requestPermission(); });
+function notifier() {
+/* On demande la permission si les notifications ne sont pas permises */
+if (Notification.permission !== 'granted')
+Notification.requestPermission();
+else { var notification = new Notification('Bonjour !');
+/* var notification = new Notification('Titre de la notification', {body : 'Bonjour !'} ); */
+
+var notification = new Notification('Titre de la notification',
+{ icon: '/icons/bell_64px.png', body: 'Bonjour !', image: "/images/notification-image.jpg", });
+notification.onclick = function () { window.open('http://example.org/'); }; } }
+</script>
+</body>
+</html>

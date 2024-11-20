@@ -1,0 +1,220 @@
+        /* FEUILLE DES STYLES */
+
+		/* Principaux */
+		
+		   body
+		   {
+			
+			font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+			text-align: center;
+			margin: 0;
+		   }
+
+		   input[type="button"]
+		   {
+			cursor: pointer;
+		   }
+
+
+/* Interface de connexion */
+
+		
+		   #intros
+		   {
+			position: absolute;
+			top: 10em;
+			left: 20%;
+			right: 20%;
+			opacity: 1;
+			pointer-events: all;
+			transition: all 1000ms ease-in-out;
+		   }
+
+		   .intro
+		   {
+			width: 20em;
+		   }
+		   .ouvrir
+		   {
+			padding: 3px 20px;
+		   }
+
+		   #msg
+		   {
+			color: red;
+		   }
+
+
+	/* Interface telecommande */
+
+		/* Les boites */
+		   
+	header
+	{
+		border-bottom: 3px solid black;
+	}
+		#boite 
+		   {
+			background-color: whitesmoke;
+			margin: 0px auto;
+			padding-bottom: 2em;
+			opacity: 0;
+
+			pointer-events: none;
+			transition: all 1000ms ease-in-out;
+		   }
+
+		#sousboite
+
+		   {
+			display: grid;
+    		grid-template-columns: 1fr 2fr;
+    		grid-template-rows: 1fr;
+   			 gap: 0.6em;
+		   }
+
+		#config
+
+		   {
+			display: grid;
+    		grid-template-columns: 1fr 1fr 1fr;
+    		grid-template-rows: 1fr;
+   			 gap: 0.6em;
+
+		   }
+		   
+	
+	#modes, #aff
+	{
+		border-bottom: 3px solid black;
+		padding: 3px auto;
+		padding-bottom: 1.5em;
+	}	 
+
+		   #commands, #ranges
+		   {
+			   border-bottom: 3px solid black;
+			   padding: 3px auto;
+			   padding-bottom: 1.5em;
+		   }
+		   #configs, #autres, #modeauto
+		   {
+			   padding: 3px auto;
+			   padding-bottom: 1.5em;
+		   }
+
+
+		   	/* Les inputs */
+		input
+		{
+			margin: 3px;
+			padding: 3px;
+			border-radius: 3px;
+			background-color: black;
+            border: 0px;
+            color: white;
+			transform: scale(1);
+			transition: all 100ms ease-in-out;
+		}
+		input:active
+		{
+			transform: scale(1.2);
+		}
+      
+
+/* Les boutons des modes */	
+
+	.mod
+	{
+		display: block;
+		margin: 0.8em auto;
+		width: 17em;
+		height: 3em;
+		border-radius: 1em;
+		font-size: medium;
+	}
+
+	/* temp et humidite */
+	.asid
+	{
+		display: block;
+		margin: 0.8em auto;
+		width: 17em;
+		height: 2em;
+		background-color: white;
+		font-size: 2em;
+		padding-top: 2%;
+	}
+
+	/* les ranges */
+	.rgboutons
+	{
+		margin: 0.8em auto;
+		width: 17em;
+		height: 3em;
+		border-radius: 1em;
+		font-size: medium;
+	}
+	   
+
+		   .lesranges
+		   {
+			width: 20em;
+		   }
+		   .configranges
+		   {
+			width: 15em;
+		   }
+
+		   
+	/* Legende apres le range */
+
+.legend
+{
+	font-weight: bold;
+	margin-left: 1.2em;
+}
+
+	/* Les touches de commande */
+	#zero
+	{
+		opacity: 0;
+		pointer-events: none;
+	}
+	.touches
+	{
+		padding: 0.5em;
+	}
+
+	/* Autres */
+
+	.bloconfig
+	{
+		background-color: rgb(200, 200, 200);
+	}
+
+	.engras
+	{
+		font-weight: bold;
+	}
+	#ptitextconfig
+	{
+		font-style: italic;
+		font-size: 0.8em;
+	}
+
+
+/* Les medias queries */
+
+	@media screen and (max-width: 840px)
+	{
+		#sousboite
+     {        
+        grid-template-columns: 1fr;
+      }
+	  #config
+     {        
+        grid-template-columns: 1fr;
+      }
+    }
+

@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" href="mes_styles.css">
+	<head><title>Explora</title>
+	
+    <script src="./main.js" defer></script>
+
+</head>
+<body>
+	<header>
+	<h1>Explora</h1>
+</header>
+
+
+
+<section  id="boite">	
+
+	<section  id="sousboite">
+	<div id="modes">
+		<h2>Modes</h2>
+		<input class="mod" id="mod1" type="button" value=" Teleguidage "/>
+		<input class="mod" id="mod2" type="button" value=" Suiveur1 "/>
+		<input class="mod" id="mod3" type="button" value=" Suiveur2 "/>
+		<input class="mod" id="mod4" type="button" value=" Autonome "/>
+	</div>
+	<div id="aff">
+		<aside class="asid" id="temmp">100°C</aside>
+		<aside class="asid" id="humi">50%</aside>
+	</div>
+
+	<div id="commands">
+		<h2>Commandes</h2>
+		<div id="lestouches">
+		<input class="touches" id="un" type="button" value="   "/> 
+		<input class="touches" id="deux" type="button" value=" F "onclick='onclickButton(this)'/>  
+		<input class="touches" id="trois" type="button" value="   "/>  <br>
+		<input class="touches" id="quatre" type="button" value=" L "/>  
+
+		<input class="touches" id="zero" type="button" value=" 0 "/>  
+
+		<input class="touches" id="cinq" type="button" value=" R "/>  <br>
+		<input class="touches" id="six" type="button" value="   "/>  
+		<input class="touches" id="sept" type="button" value=" B "/>  
+		<input class="touches" id="huit" type="button" value="   "/>  
+		</div>
+	</div>
+	
+	<div id="ranges">
+		<input class="rgboutons" id="led" type="button" value=" Led "/>
+		<input class="rgboutons" id="stock" type="button" value=" Stocker "/>
+
+		<br>
+		<label for="pince">Pince :</label>
+		<input class="lesranges" id="pince" type="range" max="180" min="0" oninput='sendButtonInput("pince",value)'/>
+		<span class="legend" id="vpince"></span>
+		<br>
+
+		<label for="art2">Coude :</label>
+		<input class="lesranges" id="art2" type="range" max="180" min="0"oninput='sendButtonInput("coude",value)'/>
+		<span class="legend" id="vart2"></span>
+		<br>
+		<label for="art1">Epaule :</label>
+		<input class="lesranges" id="art1" type="range" max="180" min="0" oninput='sendButtonInput("epaule",value)'/>
+		<span class="legend" id="vart1"></span>
+		<br>
+		<label for="rotat">Base :</label>
+		<input class="lesranges" id="rotat" type="range" max="180" min="0" oninput='sendButtonInput("base",value)'/> 
+		<span class="legend" id="vrotat"></span>
+
+		<br>
+
+		<label id="tdetect" for="detect">Scan :</label>
+		<input class="lesranges" id="detect" type="range" max="180" min="0"oninput='sendButtonInput("scan",value)'/>
+		<span class="legend" id="vdetect"></span>
+	</div>
+</section>
+
+<div class="bloconfig">
+
+<h2>Configurations</h2>
+<section id="config">
+	
+	<div id="configs">
+		<h3>Configs du Moteur</h3>
+		<label for="vitesse">Vitesse basique :</label>
+		<input class="configranges" id="vitesse" type="range" max="180" min="0"/>
+		<span class="legend" id="vvitesse"></span> <br>
+
+		<label for="vitesser">Vitesse rotation :</label>
+		<input class="configranges" id="vitesser" type="range" max="180" min="0"/>
+		<span class="legend" id="vvitesser"></span>
+	</div>
+
+	<div id="autres">
+		<h3>Configs du Bras</h3>
+
+		<label for="min_pince" id="tpince">Pince :</label>
+		<input class="confinputs" id="min_pince" placeholder="Min" type="number" max="180" min="0"/>
+		<input class="confinputs" id="max_pince" placeholder="Max" type="number" max="180" min="0"/>
+
+		<br>
+		<label for="min_rotat" id="trotat">Rotation :</label>
+		<input class="confinputs" id="min_rotat" placeholder="Min" type="number" max="180" min="0"/>
+		<input class="confinputs" id="max_rotat" placeholder="Max" type="number" max="180" min="0"/>
+	
+		<br>
+
+		<label for="min_art1" id="tart1">Articulations 1 :</label>
+		<input class="confinputs" id="min_art1" placeholder="Min" type="number" max="180" min="0"/>
+		<input class="confinputs" id="max_art1" placeholder="Max" type="number" max="180" min="0"/>
+		
+		<br>
+		<label for="min_art2" id="tart2">Articulations 2 :</label>
+		<input class="confinputs" id="min_art2" placeholder="Min" type="number" max="180" min="0"/>
+		<input class="confinputs" id="max_art2" placeholder="Max" type="number" max="180" min="0"/>
+		
+		<br>
+
+	</div>
+	
+	<div id="modeauto">
+		<h3>Configs Auto</h3>
+
+		<p id="ptitextconfig">Distance : <span id="vdistance" class="engras"></span> cm ;
+			Delais : <span id="vdelais1" class="engras"></span> ms ; 
+				<span id="vdelais2" class="engras"></span> ms ;
+				<span id="vdelais3" class="engras"></span> ms.
+		</p>
+
+		<form action="">
+		<label for="distance">Distance :</label>
+		<input class="confinputs" id="distance" placeholder="10 - 400" type="number" max="400" min="10"/>
+		<span class="autolegende">cm</span> <br>
+
+		<label for="delais1">Delais 1 :</label>
+		<input class="confinputs" id="delais1" placeholder="10 - 5000" type="number" max="5000" min="10"/>
+		<span class="autolegende">ms</span> <br>
+
+		<label for="delais2">Delais 2 :</label>
+		<input class="confinputs" id="delais2" placeholder="10 - 5000" type="number" max="5000" min="10"/>
+		<span class="autolegende">ms</span> <br>
+
+		<label for="delais3">Delais 3 :</label>
+		<input class="confinputs" id="delais3" placeholder="10 - 5000" type="number" max="5000" min="10"/>
+		<span class="autolegende">ms</span> <br>
+
+		<input class="ouvrir" id="valider" type="button" value=" Valider "/>
+		</form>
+		<p></p>
+	</div>
+</section>
+</div>
+</section>
+
+
+
+<form id="intros">
+	<input class="intro" type="text" name="login" id="log" placeholder="Login"> <br>
+	<input class="intro" type="password" name="passw" id="passw" placeholder="Password"> <br>
+	<input class="ouvrir" id="ouvrir" type="button" value=" Ouvrir "/>
+	<p id="msg"> </p>
+</form>		
+</body>
+</html>
